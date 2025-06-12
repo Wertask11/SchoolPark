@@ -1,0 +1,196 @@
+/* style.css の内容をすべてこれに上書きしてください */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8bbd0; /* 明るいピンク色 */
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 横方向の中央寄せ */
+    align-items: center;     /* 縦方向の中央寄せ */
+    min-height: 100vh;       /* 画面の高さ全体を使う */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#app-container {
+    background-color: #ffe0f0; /* 少し薄いピンク色の背景 */
+    border-radius: 20px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 100%;
+    text-align: center; /* この要素内のテキストやインライン要素を中央揃えにする */
+    margin: auto;
+}
+
+/* アニメーションの定義 */
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* School Parkの文字を囲むh1タグのスタイル */
+.animated-title {
+    /* text-alignは#app-containerで適用されるので、ここでは不要 */
+}
+
+/* 各文字（.drop-letterクラスの<span>要素）に適用するスタイル */
+.animated-title .drop-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: dropIn 0.5s ease-out forwards;
+}
+
+
+/* ボタンの共通スタイル */
+.action-button, .back-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.action-button {
+    background-color: #ff80ab; /* 鮮やかなピンク色 */
+    color: white;
+}
+
+.action-button:hover {
+    background-color: #ff528c; /* ホバーで少し濃く */
+    transform: translateY(-2px);
+}
+
+.back-button {
+    background-color: #e0e0e0; /* 薄いグレー */
+    color: #333333;
+}
+
+.back-button:hover {
+    background-color: #cccccc;
+    transform: translateY(-2px);
+}
+
+/* ゲームタイトル */
+h1 {
+    color: #c2185b; /* 濃い赤紫色 */
+    margin-bottom: 25px;
+}
+h2 {
+    color: #c2185b; /* 濃い赤紫色 */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+p {
+    color: #880e4f; /* 少し薄い赤紫色 */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* クイズ表示関連 */
+.quiz-item-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quiz-image {
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+.quiz-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #c2185b;
+}
+
+.quiz-instruction {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #880e4f; /* 濃い赤紫色 */
+    margin-bottom: 20px;
+}
+
+.quiz-answer {
+    background-color: #e0f7fa; /* 水色の背景（これは変えても問題なさそうなので維持） */
+    color: #00796b;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.quiz-hint {
+    color: #c2185b; /* 赤っぽい色 */
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.quiz-navigation {
+    margin-top: 20px;
+}
+
+/* game-content のリストスタイル調整 */
+.game-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.game-content ul li {
+    margin-bottom: 10px;
+}
+
+.game-content ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.game-content ol li {
+    margin-bottom: 10px;
+}
+
+/* ネストされたリストや特定の箇所の左寄せを維持 */
+.game-content ul.sub-list,
+.game-content ol ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* 遊びのポイントやヒントのスタイル */
+.game-points, .game-hint {
+    font-weight: bold;
+    color: #880e4f; /* 濃い赤紫色 */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.game-hint-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.game-hint-list li {
+    margin-bottom: 5px;
+}
